@@ -15,6 +15,14 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->string('description')->nullable();
+            $table->string('slug')->nullable();
+            $table->boolean('status')->default(0);
+            $table->string('stock')->nullable();
+            $table->string('specifications')->nullable();
+            $table->string('images');
+            $table->string('guide_file')->nullable();
             $table->timestamps();
         });
     }
